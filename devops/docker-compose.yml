@@ -1,0 +1,15 @@
+name: raee-frontend
+
+services:
+  raee-frontend:
+        build:
+            context: ..
+            dockerfile: devops/Dockerfile
+        container_name: raee-frontend
+        restart: unless-stopped
+        networks:
+            - npm_network
+
+networks:
+    npm_network:
+        external: true
